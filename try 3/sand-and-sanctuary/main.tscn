@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://djeo14e2tmoe4"]
+[gd_scene load_steps=4 format=3 uid="uid://djeo14e2tmoe4"]
 
 [ext_resource type="Script" uid="uid://cugw4lyqhl4uq" path="res://control.gd" id="1_ig7tw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bi3ve4kqk21h3" path="res://statbar.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://v64po0lspxg0" path="res://menu_buttons.gd" id="2_h2yge"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="bg container" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(600, 800)
 layout_mode = 1
 anchors_preset = 8
@@ -21,110 +21,171 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainersdfgh" type="MarginContainer" parent="bg container"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="base" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="bg container/MarginContainersdfgh"]
+visible = false
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Margin" type="MarginContainer" parent="bg container"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Vbox" type="VBoxContainer" parent="bg container/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/base"]
+[node name="menu buttons" type="PanelContainer" parent="bg container/Margin/Vbox" node_paths=PackedStringArray("main", "stats")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+script = ExtResource("2_h2yge")
+main = NodePath("../main contents/base")
+stats = NodePath("../main contents/info")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/base/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="bg container/Margin/Vbox/menu buttons"]
 layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/base/PanelContainer2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="bg container/Margin/Vbox/menu buttons/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/base/PanelContainer2/MarginContainer/HBoxContainer"]
+[node name="quit" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "quit"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/base/PanelContainer2/MarginContainer/HBoxContainer"]
+[node name="main" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "main"
+
+[node name="stats" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "info"
+text = "stats"
 
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/base/PanelContainer2/MarginContainer/HBoxContainer"]
+[node name="inventory" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "menu
-"
+text = "Inv"
 
-[node name="top panel" type="PanelContainer" parent="PanelContainer/MarginContainer/base"]
-custom_minimum_size = Vector2(0, 380)
+[node name="main contents" type="PanelContainer" parent="bg container/Margin/Vbox"]
+custom_minimum_size = Vector2(0, 740)
 layout_mode = 2
 
-[node name="bottom panel" type="PanelContainer" parent="PanelContainer/MarginContainer/base"]
-custom_minimum_size = Vector2(0, 380)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/base/bottom panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="choices" type="VBoxContainer" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer"]
+[node name="base" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer/choices"]
+[node name="top panel" type="PanelContainer" parent="bg container/Margin/Vbox/main contents/base"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="bottom panel" type="PanelContainer" parent="bg container/Margin/Vbox/main contents/base"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer"]
+layout_mode = 2
+
+[node name="choices" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "1: sdfgsdrgser"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer/choices"]
+[node name="Button2" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices"]
 layout_mode = 2
 text = "2: sdfgsdrgser"
 
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer/choices"]
+[node name="Button3" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices"]
 layout_mode = 2
 text = "2: sdfgsdrgser"
 
-[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer/choices"]
+[node name="Button4" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices"]
 layout_mode = 2
 text = "2: sdfgsdrgser"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/base/bottom panel/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "possessed  from  the  first  the  art  of  disappearing  swiftly  and silently,  when  large  folk  whom  they  do  not  wish  to  meet  come blundering  by;  and  this  art  they  have  developed  until  to  Men it  may  seem  magical.  But  Hobbits  have  never,  in  fact,  studied magic  of  any  kind,  and  their  elusiveness  is  due  solely  to a  professional  skill  that  heredity  and  practice,  and  a  close friendship  with  the  earth,  have  rendered  inimitable  by  bigger and  clumsier  races. "
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer"]
+[node name="info" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="bg container/Margin/Vbox/main contents/info"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_bottom = 8
 
-[node name="info" type="PanelContainer" parent="PanelContainer/MarginContainer/MarginContainer"]
+[node name="Label4" type="Label" parent="bg container/Margin/Vbox/main contents/info"]
+visible = false
+layout_mode = 2
+text = "Energy: 60/100"
+
+[node name="Label" type="Label" parent="bg container/Margin/Vbox/main contents/info"]
+visible = false
+layout_mode = 2
+text = "Hunger: 8/100"
+
+[node name="Label2" type="Label" parent="bg container/Margin/Vbox/main contents/info"]
+visible = false
+layout_mode = 2
+text = "Thirst: 8/100"
+
+[node name="Label3" type="Label" parent="bg container/Margin/Vbox/main contents/info"]
+visible = false
+layout_mode = 2
+text = "Body Tempature: 60/100"
+
+[node name="Control" parent="bg container/Margin/Vbox/main contents/info" instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="PanelContainer"]
+[node name="Control2" parent="bg container/Margin/Vbox/main contents/info" instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+bar_name = "Hunger"
+global_value = "hunger"
+
+[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/quit" to="bg container/Margin/Vbox/menu buttons" method="_on_quit_pressed"]
+[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/main" to="bg container/Margin/Vbox/menu buttons" method="_on_main_pressed"]
+[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/stats" to="bg container/Margin/Vbox/menu buttons" method="_on_stats_pressed"]
+[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/inventory" to="bg container/Margin/Vbox/menu buttons" method="_on_inventory_pressed"]

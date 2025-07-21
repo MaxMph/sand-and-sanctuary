@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi3ve4kqk21h3"]
+
+[ext_resource type="Script" uid="uid://b3i3260c0tlbn" path="res://statbar.gd" id="1_ork8m"]
+
+[node name="statbar" type="PanelContainer"]
+script = ExtResource("1_ork8m")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Energy"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2

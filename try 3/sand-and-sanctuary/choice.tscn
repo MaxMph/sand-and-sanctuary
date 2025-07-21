@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c70nan5e0hn37"]
+
+[node name="Choice" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "1: blabla one two three"
