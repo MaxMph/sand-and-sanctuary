@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	$HBoxContainer/ProgressBar.value = Global.get(global_value)
+	$HBoxContainer/MarginContainer/ProgressBar.value = Global.get(global_value)

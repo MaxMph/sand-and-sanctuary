@@ -14,5 +14,10 @@ layout_mode = 2
 text = "Energy"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
