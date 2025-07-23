@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://djeo14e2tmoe4"]
+[gd_scene load_steps=9 format=3 uid="uid://djeo14e2tmoe4"]
 
 [ext_resource type="Script" uid="uid://cugw4lyqhl4uq" path="res://control.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bi3ve4kqk21h3" path="res://statbar.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://v64po0lspxg0" path="res://menu_buttons.gd" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c70nan5e0hn37" path="res://choice.tscn" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cgeuae56ypald" path="res://icon.svg" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://xh6wq0wooofs" path="res://google maps MS image 1.jpg" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://cbwy3dahh8x17" path="res://events/stream event 2.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://6ufexckjnqwx" path="res://events/tired_traveler.gd" id="8_5vw27"]
 
 [sub_resource type="Curve2D" id="Curve2D_272bh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5201, -1272.5, 0, 0, 0, 0, 4827, -1331.5, 0, 0, 0, 0, 4630, -1154.5, 0, 0, 0, 0, 4472, -947.5, 0, 0, 0, 0, 4315, -839.5, 0, 0, 0, 0, 4137, -809.5, 0, 0, 0, 0, 3980, -829.5, 0, 0, 0, 0, 3694, -681.5, 0, 0, 0, 0, 3605, -543.5, 0, 0, 0, 0, 3517, -179.5, 0, 0, 0, 0, 3458, -51.5, 0, 0, 0, 0, 3379, -31.5, 0, 0, 0, 0, 3113, -61.5, 0, 0, 0, 0, 3005, -169.5, 0, 0, 0, 0, 2906, -12.5, 0, 0, 0, 0, 2709, 155.5, 0, 0, 0, 0, 2611, 194.5, 0, 0, 0, 0, 2285, 125.5, 0, 0, 0, 0, 2029, 283.5, 0, 0, 0, 0, 1773, 391.5, 0, 0, 0, 0, 1626, 372.5, 0, 0, 0, 0, 1281, 165.5, 0, 0, 0, 0, 966, 234.5, 0, 0, 0, 0, 739, 372.5, 0, 0, 0, 0, 552, 441.5, 0, 0, 0, 0, 89, 322.5, 0, 0, 0, 0, -295, 125.5, 0, 0, 0, 0, -886, 86.5, 0, 0, 0, 0, -1270, 332.5, 0, 0, 0, 0, -1576, 539.5, 0, 0, 0, 0, -2029, 618.5, 0, 0, 0, 0, -2314, 559.5)
+"points": PackedVector2Array(0, 0, 0, 0, 4904, -1266, 0, 0, 0, 0, 4783, -1303, 0, 0, 0, 0, 4630, -1154.5, 0, 0, 0, 0, 4472, -947.5, 0, 0, 0, 0, 4315, -839.5, 0, 0, 0, 0, 4137, -809.5, 0, 0, 0, 0, 3980, -829.5, 0, 0, 0, 0, 3694, -681.5, 0, 0, 0, 0, 3605, -543.5, 0, 0, 0, 0, 3517, -179.5, 0, 0, 0, 0, 3458, -51.5, 0, 0, 0, 0, 3379, -31.5, 0, 0, 0, 0, 3113, -61.5, 0, 0, 0, 0, 3005, -169.5, 0, 0, 0, 0, 2906, -12.5, 0, 0, 0, 0, 2709, 155.5, 0, 0, 0, 0, 2611, 194.5, 0, 0, 0, 0, 2285, 125.5, 0, 0, 0, 0, 2029, 283.5, 0, 0, 0, 0, 1773, 391.5, 0, 0, 0, 0, 1626, 372.5, 0, 0, 0, 0, 1281, 165.5, 0, 0, 0, 0, 966, 234.5, 0, 0, 0, 0, 739, 372.5, 0, 0, 0, 0, 552, 441.5, 0, 0, 0, 0, 89, 322.5, 0, 0, 0, 0, -295, 125.5, 0, 0, 0, 0, -886, 86.5, 0, 0, 0, 0, -1270, 332.5, 0, 0, 0, 0, -1576, 539.5, 0, 0, 0, 0, -2029, 618.5, 0, 0, 0, 0, -2267, 578, 0, 0, 0, 0, -2430, 666, 0, 0, 0, 0, -2604, 606, 0, 0, 0, 0, -2651, 355, 0, 0, 0, 0, -2497, 226, 0, 0, 0, 0, -2266, 134.5, 0, 0, 0, 0, -2085, 282.5, 0, 0, 0, 0, -1943, 477.5, 0, 0, 0, 0, -1869, 840.5, 0, 0, 0, 0, -1695, 1008.5, 0, 0, 0, 0, -1291, 981.5, 0, 0, 0, 0, -1029, 699.5, 0, 0, 0, 0, -955, 416.5, 0, 0, 0, 0, -914, -141.5, 0, 0, 0, 0, -329, -424.5, 0, 0, 0, 0, 297, -128.5, 0, 0, 0, 0, 748, 457.5, 0, 0, 0, 0, 1279, 1062.5, 0, 0, 0, 0, 1965, 1076.5, 0, 0, 0, 0, 2746, 874.5, 0, 0, 0, 0, 3102, 591.5, 0, 0, 0, 0, 3284, 208.5, 0, 0, 0, 0, 3284, -235.5, 0, 0, 0, 0, 3324, -652.5, 0, 0, 0, 0, 3452, -753.5, 0, 0, 0, 0, 3809, -612.5, 0, 0, 0, 0, 4185, -437.5, 0, 0, 0, 0, 4582, -464.5, 0, 0, 0, 0, 4797, -666.5, 0, 0, 0, 0, 4959, -915.5, 0, 0, 0, 0, 5045, -1018, 0, 0, 0, 0, 5034, -1236, 0, 0, 0, 0, 5078, -1117)
 }
-point_count = 32
+point_count = 64
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -128,10 +129,12 @@ size = Vector2i(584, 323)
 render_target_update_mode = 4
 
 [node name="Path2D" type="Path2D" parent="bg container/Margin/Vbox/main contents/base/top panel/SubViewportContainer/SubViewport"]
+position = Vector2(-79, 2.5)
 curve = SubResource("Curve2D_272bh")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="bg container/Margin/Vbox/main contents/base/top panel/SubViewportContainer/SubViewport/Path2D"]
-position = Vector2(5201, -1272.5)
+unique_name_in_owner = true
+position = Vector2(4904, -1266)
 rotates = false
 
 [node name="Sprite2D" type="Sprite2D" parent="bg container/Margin/Vbox/main contents/base/top panel/SubViewportContainer/SubViewport/Path2D/PathFollow2D"]
@@ -140,10 +143,11 @@ scale = Vector2(40, 40)
 texture = ExtResource("3_lquwl")
 
 [node name="map" type="Sprite2D" parent="bg container/Margin/Vbox/main contents/base/top panel/SubViewportContainer/SubViewport/Path2D/PathFollow2D"]
-position = Vector2(-1205, 1425)
+position = Vector2(-1254, 1433)
 texture = ExtResource("4_7mycd")
 
 [node name="Sprite2D" type="Sprite2D" parent="bg container/Margin/Vbox/main contents/base/top panel/SubViewportContainer/SubViewport/Path2D/PathFollow2D/map"]
+visible = false
 position = Vector2(-3457, 15)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_lquwl")
@@ -168,6 +172,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="time" type="Label" parent="bg container/Margin/Vbox/main contents/base/top panel"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "6:00 AM"
+horizontal_alignment = 1
+
 [node name="bottom panel" type="PanelContainer" parent="bg container/Margin/Vbox/main contents/base"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -182,20 +192,25 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer"]
 layout_mode = 2
 
-[node name="choices" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "possessed  from  the  first  the  art  of  disappearing  swiftly  and silently,  when  large  folk  whom  they  do  not  wish  to  meet  come blundering  by;  and  this  art  they  have  developed  until  to  Men it  may  seem  magical.  But  Hobbits  have  never,  in  fact,  studied magic  of  any  kind,  and  their  elusiveness  is  due  solely  to a  professional  skill  that  heredity  and  practice,  and  a  close friendship  with  the  earth,  have  rendered  inimitable  by  bigger and  clumsier  races. "
+fit_content = true
+
+[node name="choices vbox" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="Choice" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices" instance=ExtResource("3_1bvp3")]
-layout_mode = 2
-
-[node name="Choice2" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/choices" instance=ExtResource("3_1bvp3")]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+[node name="next button" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "possessed  from  the  first  the  art  of  disappearing  swiftly  and silently,  when  large  folk  whom  they  do  not  wish  to  meet  come blundering  by;  and  this  art  they  have  developed  until  to  Men it  may  seem  magical.  But  Hobbits  have  never,  in  fact,  studied magic  of  any  kind,  and  their  elusiveness  is  due  solely  to a  professional  skill  that  heredity  and  practice,  and  a  close friendship  with  the  earth,  have  rendered  inimitable  by  bigger and  clumsier  races. "
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "--->"
 
 [node name="info" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents"]
 visible = false
@@ -243,7 +258,18 @@ layout_mode = 2
 bar_name = "Warmth"
 global_value = "warmth"
 
+[node name="events" type="Node" parent="."]
+
+[node name="river crossing" type="Node" parent="events"]
+script = ExtResource("7_272bh")
+metadata/_custom_type_script = "uid://3olcw1ecb0f8"
+
+[node name="tired traveler" type="Node" parent="events"]
+script = ExtResource("8_5vw27")
+metadata/_custom_type_script = "uid://3olcw1ecb0f8"
+
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/quit" to="bg container/Margin/Vbox/menu buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/main" to="bg container/Margin/Vbox/menu buttons" method="_on_main_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/stats" to="bg container/Margin/Vbox/menu buttons" method="_on_stats_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/inventory" to="bg container/Margin/Vbox/menu buttons" method="_on_inventory_pressed"]
+[connection signal="pressed" from="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/next button" to="." method="_on_next_button_pressed"]
