@@ -145,11 +145,6 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="save" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-text = "save"
-
 [node name="quit" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -171,12 +166,7 @@ text = "stats"
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-disabled = true
 text = "Inv"
-
-[node name="clear save" type="Button" parent="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Clear save"
 
 [node name="main contents" type="PanelContainer" parent="bg container/Margin/Vbox"]
 custom_minimum_size = Vector2(0, 740)
@@ -293,15 +283,8 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-focus_mode = 2
+text = "possessed  from  the  first  the  art  of  disappearing  swiftly  and silently,  when  large  folk  whom  they  do  not  wish  to  meet  come blundering  by;  and  this  art  they  have  developed  until  to  Men it  may  seem  magical.  But  Hobbits  have  never,  in  fact,  studied magic  of  any  kind,  and  their  elusiveness  is  due  solely  to a  professional  skill  that  heredity  and  practice,  and  a  close friendship  with  the  earth,  have  rendered  inimitable  by  bigger and  clumsier  races. "
 fit_content = true
-selection_enabled = true
-
-[node name="copy button" type="Button" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Copy"
 
 [node name="choices vbox" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -316,10 +299,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
 text = "--->"
-
-[node name="end stats" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="info" type="VBoxContainer" parent="bg container/Margin/Vbox/main contents"]
 visible = false
@@ -378,15 +357,12 @@ script = ExtResource("8_5vw27")
 metadata/_custom_type_script = "uid://3olcw1ecb0f8"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.4
 autostart = true
 
-[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/quit" to="bg container/Margin/Vbox/menu buttons" method="_on_quit_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/main" to="bg container/Margin/Vbox/menu buttons" method="_on_main_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/stats" to="bg container/Margin/Vbox/menu buttons" method="_on_stats_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/inventory" to="bg container/Margin/Vbox/menu buttons" method="_on_inventory_pressed"]
-[connection signal="pressed" from="bg container/Margin/Vbox/menu buttons/MarginContainer/HBoxContainer/clear save" to="." method="_on_clear_save_pressed"]
-[connection signal="pressed" from="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/copy button" to="." method="_on_copy_button_pressed"]
 [connection signal="pressed" from="bg container/Margin/Vbox/main contents/base/bottom panel/MarginContainer/VBoxContainer/next button" to="." method="_on_next_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

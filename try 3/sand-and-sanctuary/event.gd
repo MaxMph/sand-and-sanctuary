@@ -63,3 +63,4 @@ func end():
 	%RichTextLabel.text = ""
 	for i in %"choices vbox".get_children():
 		i.queue_free()
+	Global._save()
